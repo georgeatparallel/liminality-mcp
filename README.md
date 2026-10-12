@@ -59,6 +59,15 @@ Add to `.vscode/mcp.json`:
 }
 ```
 
+**Docker (stdio bridge)**
+
+For clients or directories that need a container, the [`Dockerfile`](Dockerfile) wraps the
+remote endpoint with `mcp-remote`:
+
+```bash
+docker build -t liminal-mcp . && docker run -i --rm -e API_KEY=YOUR_KEY liminal-mcp
+```
+
 - **Endpoint:** `https://liminality.physea.ai/mcp`
 - **Transport:** streamable HTTP (remote, hosted)
 - **Auth:** API key via `X-API-Key` or `Authorization: Bearer`, or OAuth 2.1.
